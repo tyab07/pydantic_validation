@@ -17,3 +17,24 @@ class Student(BaseModel):
         if domain not in valid_domains:
             raise ValueError(f"Invalid email domain: {domain}. Allowed domains are: {valid_domains}")
         return value
+
+
+def read_student(student: Student):
+    print(student.name)
+    print(student.age)
+    print(student.bio)
+    print(student.hobbies)
+    print(student.link)
+    print(student.email)
+
+
+student: Student = Student(
+    name="Tayyab",
+    age=21,
+    bio="I am a student of computer science",
+    hobbies=["Reading", "Coding"],
+    link="https://www.google.com",
+    email="tayyab@nu.com",
+)
+
+read_student(student)
