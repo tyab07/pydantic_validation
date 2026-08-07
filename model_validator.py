@@ -13,3 +13,22 @@ class Student(BaseModel):
         if model.age < 18 and model.hobbies and "Reading" not in model.hobbies:
             raise ValueError("Age must be greater than or equal to 18 or include Reading")
         return model
+
+
+def read_student(student: Student):
+    print(student.name)
+    print(student.age)
+    print(student.bio)
+    print(student.hobbies)
+    print(student.link)
+
+
+student = Student(
+    name="Tayyab",
+    age=10,
+    bio="I am a student of computer science",
+    hobbies=["Reading", "Coding"],
+    link="https://www.google.com",
+)
+
+read_student(student)
