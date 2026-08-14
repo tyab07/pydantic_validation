@@ -2,6 +2,7 @@ from pydantic import BaseModel,AnyUrl,Field
 from typing import Annotated as Annotation
 
 class Student(BaseModel):
+    """Minimal student model used to explain Pydantic benefits."""
     name:str
     age:Annotation[int,Field(default=18,description="This is the age of the student",gt=0,lt=100)]
     bio:Annotation[str,Field(default=None,description="This is a bio of the student")]
