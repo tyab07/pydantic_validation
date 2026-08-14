@@ -31,6 +31,7 @@ class Student(BaseModel):
 
 
 def readStudent(student:Student):
+    # Show the validated data and derived BMI in a single run.
     print(student.name)
     print(student.age)
     print(student.bio)
