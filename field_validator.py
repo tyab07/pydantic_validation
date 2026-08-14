@@ -1,7 +1,8 @@
-from pydantic import BaseModel, AnyUrl, Field, EmailStr
+from pydantic import BaseModel, AnyUrl, Field, EmailStr,field_validator
 from typing import Annotated as Annotation
 
 class Student(BaseModel):
+    """Simple student model used to demonstrate field validation."""
     name: str
     age: Annotation[int, Field(default=18, description="This is the age of the student", gt=0, lt=100)]
     bio: Annotation[str | None, Field(default=None, description="This is a bio of the student")]
