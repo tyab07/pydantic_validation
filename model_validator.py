@@ -2,6 +2,7 @@ from pydantic import BaseModel, AnyUrl, Field, model_validator
 from typing import Annotated as Annotation
 
 class Student(BaseModel):
+    """Student example with a model-level age validation rule."""
     name: str
     age: Annotated[int, Field(default=18, description="This is the age of the student", gt=0, lt=100)]
     bio: Annotated[str, Field(default=None, description="This is a bio of the student")]
