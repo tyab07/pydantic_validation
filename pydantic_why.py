@@ -11,6 +11,7 @@ class Student(BaseModel):
 
 
 def readStudent(student:Student):
+    # Print the validated student fields for a simple demonstration.
     print(student.name)
     print(student.age)
     print(student.bio)
