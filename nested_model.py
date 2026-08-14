@@ -14,8 +14,7 @@ class Patient(BaseModel):
     address:Address
 
 
-
-
+# Build a representative patient payload for the nested model demo.
 def initialize_patient_data()->Patient:
     address = Address(street="123 Main St", city="New York", state="NY", zip_code="10001")
     patient = Patient(name="John Doe", age=30, address=address)
