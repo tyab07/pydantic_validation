@@ -15,6 +15,7 @@ class Student(BaseModel):
     @field_validator('email')
     @classmethod
     def email_validator(cls,value:EmailStr):
+        # This demo only accepts a couple of university-style domains.
         valid_domains = ["edu.com","nu.com"]
         domain = value.split('@')[-1]
         if domain not in valid_domains:
