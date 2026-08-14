@@ -11,6 +11,7 @@ class Student(BaseModel):
 
     @model_validator(mode="after")
     def age_model(model):
+        # Encourage the reading hobby when the student is under 18.
         if model.age < 18 and model.hobbies and "Reading" not in model.hobbies:
             raise ValueError("Age must be greater than or equal to 18 or include Reading")
         return model
