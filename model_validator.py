@@ -18,6 +18,7 @@ class Student(BaseModel):
 
 
 def read_student(student: Student):
+    # Print the validated student record to inspect the model logic.
     print(student.name)
     print(student.age)
     print(student.bio)
