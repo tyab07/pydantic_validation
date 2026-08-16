@@ -1,14 +1,12 @@
 # pydantic-validation
 
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
+[![Build Status](https://img.shields.io/badge/ci-pending-lightgrey)]()
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)]()
+
 Professional, well-documented utilities and examples for data validation using Pydantic.
 
 This repository contains Pydantic models, validation helpers, configuration patterns, and example usages designed to make robust data validation straightforward in Python applications.
-
-Badges
-
-[![Python](https://img.shields.io/badge/python-3.8%2B-blue)]()
-[![Build Status](https://img.shields.io/badge/ci-pending-lightgrey)]()
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)]()
 
 Project status
 
@@ -84,13 +82,16 @@ See the `examples/` directory for small, focused demonstrations showing common p
 - examples/settings_example.py — BaseSettings usage for application configuration
 - examples/coercion_examples.py — parsing and coercing untrusted input
 
+Provide an environment example at `examples/.env.example` to show expected keys for `BaseSettings`.
+
 ## API Reference & Project Structure
 
-- `models/` — Pydantic models and validators
-- `utils/` — helper functions for coercion and common validators
-- `settings/` — typed application settings using BaseSettings
+- `pydantic_validation/` (package)
+  - `models/` — Pydantic models and validators
+  - `utils/` — helper functions for coercion and common validators
+  - `settings/` — typed application settings using BaseSettings
 
-Provide detailed docstrings for exported models and functions.
+Exported models should include clear docstrings and type hints. Public API surface is exposed under `pydantic_validation.__all__`.
 
 ## Testing
 
@@ -102,8 +103,8 @@ pytest -q
 
 ## Continuous Integration
 
-- A GitHub Actions workflow runs tests on push and PRs.
-- Ensure linting and type checks pass before merging.
+- GitHub Actions workflow: `.github/workflows/ci.yml` runs tests on push and pull requests.
+- Coverage is measured and reported; ensure coverage thresholds are met before merging.
 
 ## Contributing
 
@@ -114,6 +115,8 @@ Contributions are welcome. Please follow these steps:
 3. Follow conventional commits for messages: `feat:`, `fix:`, `docs:`, `chore:`, `test:`, `refactor:`.
 4. Add or update tests and documentation for any change that affects behavior.
 5. Open a pull request referencing the issue and describing the change.
+
+Include a `PULL_REQUEST_TEMPLATE.md` and `CONTRIBUTING.md` in the repository root for guidance.
 
 ## Release & Changelog
 
